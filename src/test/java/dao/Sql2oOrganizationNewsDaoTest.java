@@ -19,7 +19,7 @@ public class Sql2oOrganizationNewsDaoTest {
 
     @BeforeClass
     public static void setUp() throws Exception {
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:/database.sql'";
+        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/database.sql'";
         Sql2o sql2o = new Sql2o(connectionString,""," ");
 
         newsDao = new Sql2oOrganizationNewsDao(sql2o);
