@@ -1,14 +1,16 @@
 import com.google.gson.Gson;
-import dao.Sql2oOrganizationUserDao;
-import dao.Sql2oOrganizationNewsDao;
 import dao.Sql2oOrganizationDepartmentDao;
+import dao.Sql2oOrganizationNewsDao;
+import dao.Sql2oOrganizationUserDao;
 import models.organizationDepartment;
 import models.organizationDepartmentNews;
 import models.organizationGeneralNews;
 import models.organizationUser;
-import org.sql2o.Sql2o;
 import org.sql2o.Connection;
-import static spark.Spark.*;
+import org.sql2o.Sql2o;
+
+import static spark.Spark.get;
+import static spark.Spark.post;
 
 public class App {
     public static void main(String[] args) {
@@ -19,7 +21,7 @@ public class App {
         Connection conn;
         Gson gson = new Gson();
 
-        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:db/database.sql'";
+        String connectionString = "jdbc:h2:mem:testing;INIT=RUNSCRIPT from 'classpath:/database.sql'";
         Sql2o sql2o = new Sql2o(connectionString,""," ");
 
         departmentDao = new  Sql2oOrganizationDepartmentDao (sql2o);

@@ -1,16 +1,11 @@
 package dao;
 
-import groovy.sql.Sql;
 import models.organizationDepartment;
-import models.organizationDepartmentNews;
-import models.organizationGeneralNews;
-import models.organizationUser;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 import org.sql2o.Sql2oException;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 public class Sql2oOrganizationDepartmentDao implements organizationDepartmentDao{
